@@ -1,0 +1,16 @@
+name: Debug Log Example
+
+on: [push]
+
+jobs:
+  debug_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Output normal log
+        run: echo "This is a normal log message."
+
+      - name: Output debug message
+        run: echo "::debug::This is a detailed debug message that will only show up if debug logging is enabled."
